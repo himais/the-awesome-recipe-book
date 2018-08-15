@@ -1,12 +1,18 @@
 <div class="container">
-    <div class="row">
-      <div class="col-sm-10 align-self-center">
-        <app-shopping-cart></app-shopping-cart>
-      </div>
+  <div class="row">
+    <div class="col-sm-10 align-self-center">
+      <app-shopping-cart></app-shopping-cart>
     </div>
-    <div class="row">
-        <div class="col-sm-10 align-self-center">
-          <p>The awesome list</p>
-        </div>
-      </div>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1 align-self-center">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let ingredient of ingredients">
+          {{ingredient.name}}
+          <span class="badge badge-info badge-pill"> {{ingredient.amount}} </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
