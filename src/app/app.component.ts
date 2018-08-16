@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'the-awesome-recipe-book';
+  selectedTab: String = 'recipe';
+
+  onClickMenu(selected) {
+    this.selectedTab = selected;
+  }
 }
