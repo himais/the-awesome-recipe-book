@@ -3,16 +3,36 @@
     <form>
       <div class="form-row">
         <div class="col-sm-10">
-          <input type="text" class="form-control form-control-sm" placeholder="ingredient" id="name">
+          <input 
+            type="text" 
+            class="form-control form-control-sm" 
+            placeholder="ingredient" 
+            id="ingredientName"
+            name="ingredientName"
+            [(ngModel)]="ingredientName"
+          >
         </div>
         <div class="col-sm-2">
-          <input type="number" class="form-control form-control-sm" placeholder="amount" id="amount">
+          <input 
+            type="number" 
+            class="form-control form-control-sm" 
+            placeholder="amount" 
+            id="ingredientAmount"
+            name="ingredientAmount"
+            [(ngModel)]="ingredientAmount"
+          >
         </div>
       </div>
       <div class="form-row">
         <button type="button" class="btn btn-outline-secondary" type="button">Clear</button>
         <button type="button" class="btn btn-outline-danger" type="button">Delete</button>
-        <button type="button" class="btn btn-outline-success" type="submit">Add</button>
+        <button 
+          type="button" 
+          class="btn btn-outline-success" 
+          type="submit"
+          (click)="onAddIngredient()">
+          Add
+        </button>
       </div>
     </form>
   </div>
