@@ -19,7 +19,7 @@ export class ShoppingCartComponent implements OnInit {
 
   onAddIngredient() {
     const newIngredient = new Ingredient(this.ingredientName, this.ingredientAmount);
-    this.shoppingService.addIngredients(newIngredient);
+    this.shoppingService.addIngredient(newIngredient);
   }
 
 }

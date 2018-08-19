@@ -10,8 +10,11 @@ export class ShoppingService {
         return this.ingredients;
     }
 
-    addIngredients(ingredient: Ingredient) {
+    addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
     }
 
+    addIngredients(ingredients: Ingredient[]) {
+        this.ingredients.push(...ingredients);
+    }
 }
