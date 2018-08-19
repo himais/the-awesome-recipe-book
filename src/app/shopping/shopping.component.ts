@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Ingredient} from '../shared/ingredient.model';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingService } from './shopping.service';
 
 @Component({
   selector: 'app-shopping',
@@ -8,18 +9,16 @@ import {Ingredient} from '../shared/ingredient.model';
   styleUrls: ['./shopping.component.css']
 })
 export class ShoppingComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apple', 5),
-    new Ingredient('Sugar', 3)
-  ];
+  ingredients: Ingredient[] = [];
 
   onIngredientAdded(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
   }
 
-  constructor() { }
+  constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
+    this.ingredients = this.shoppingService.getAllIngredients();
   }
 
 }

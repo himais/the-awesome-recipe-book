@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model';
+import { ShoppingService } from '../shopping.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -9,16 +10,16 @@ import { Ingredient } from '../../shared/ingredient.model';
 export class ShoppingCartComponent implements OnInit {
   ingredientName = '';
   ingredientAmount = 0;
-  @Output('onAddIngredient') newIngredient = new EventEmitter<Ingredient>();
+  //@Output('onAddIngredient') newIngredient = new EventEmitter<Ingredient>();
 
-  constructor() { }
+  constructor(private shoppingService: ShoppingService) { }
 
   ngOnInit() {
   }
 
   onAddIngredient() {
-    console.log('here');
-    this.newIngredient.emit(new Ingredient(this.ingredientName, this.ingredientAmount));
+    const newIngredient = new Ingredient(this.ingredientName, this.ingredientAmount);
+    this.shoppingService.addIngredients(newIngredient);
   }
 
 }

@@ -38,6 +38,12 @@
 
 <div class="row text-center">
   <div class="col-sm-12">
-    <p>Ingredients</p>
+    <h5>Ingredients</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.name}}
+        <span class="badge badge-info badge-pill"> {{ingredient.amount}} </span>
+      </li>
+    </ul>
   </div>
 </div>
