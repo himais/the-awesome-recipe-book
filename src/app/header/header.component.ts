@@ -6,14 +6,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output('onSelectTab') selectedTab = new EventEmitter<string>();
+  // @Output('onSelectTab') selectedTab = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelectTab(selected) {
-    this.selectedTab.emit(selected);
-  }
+  // onSelectTab(selected) {
+  //   this.selectedTab.emit(selected);
+  // }
 
 }
